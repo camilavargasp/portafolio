@@ -14,7 +14,7 @@ get_watson_data <- function(year_query = NULL,
   
   if(include_ind){
     
-    watson_index_raw_ind <- read_csv(here::here("data/watson_index_per_fishing_event_ind.csv")) %>%
+    watson_index_raw_ind <- read_csv(here::here("data/tnc_plastic_gear/watson_index_per_fishing_event_ind.csv")) %>%
       clean_names() %>%
       rename(year = i_year) %>%
       mutate(id = as.character(id)) %>%
@@ -24,7 +24,7 @@ get_watson_data <- function(year_query = NULL,
   
   if(include_non_ind){
     
-    watson_index_raw_Nind <- read_csv(here::here("data/watson_index_per_fishing_event_Nind.csv")) %>%
+    watson_index_raw_Nind <- read_csv(here::here("data/tnc_plastic_gear/watson_index_per_fishing_event_Nind.csv")) %>%
       clean_names() %>%
       rename(year = i_year) %>%
       mutate(id = as.character(id)) %>%
@@ -62,7 +62,7 @@ get_fao_landings <- function(year_query =NULL,
                              include_inland = FALSE,
                              include_aquaculture = FALSE) {
   
-  fao_data <- read_csv(here::here("data/fao_global_production_1950_2018.csv"))
+  fao_data <- read_csv(here::here("data/tnc_plastic_gear/fao_global_production_1950_2018.csv"))
   
   fao_landings <- fao_data %>%
     rename(country = "Country (Country)",
